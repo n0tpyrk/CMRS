@@ -5,7 +5,7 @@ The Coffee Machine Reservation System (CMRS) was developed for the Gold Coast Co
 
 
 # Misc
-This project was also to fulfil the requirements of ISY10221 and ISY10222 courses. These courses are the final year project courses for the Bachelor of Information Technology at Southern Cross University. The Assessment Grades of both courses are High Distinction (HD).
+This project was also to fulfil the requirements of ISY10221 and ISY10222 courses. These courses were the final year project courses for the Bachelor of Information Technology at Southern Cross University. The Assessment Grades of both courses are High Distinction (HD).
 
 ISY10221 (2019S2): https://handbook.scu.edu.au/unit/isy10221/2019
 
