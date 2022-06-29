@@ -66,3 +66,7 @@ Two add-ons are used for this project:
     </tr>
   </tbody>
 </table>
+
+## References
+- [vynci/MQTT-REST-API](https://github.com/vynci/MQTT-REST-API)
+- [node-postgres-docs/content/features/3-pooling.mdx](https://github.com/brianc/node-postgres-docs/blob/master/content/features/3-pooling.mdx)
