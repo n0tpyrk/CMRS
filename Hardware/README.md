@@ -13,3 +13,7 @@ To add the boards, open Tools -> Board:"Some Arduino Board" -> Boards Manager. T
 To add the library, open Tools -> Manage Libraries. Then search PubSubClient, and install.   
 If it cannot be found in the Library Manager, please download it form this repository or from [knolleary/pubsubclient](https://github.com/knolleary/pubsubclient).   
 To import zip Arduino libraries, please refer to this guide [Installing Libraries](https://docs.arduino.cc/software/ide-v1/tutorials/installing-libraries).
+
+# References
+- [vynci/esp8266-relay](https://github.com/vynci/esp8266-relay)
+- [knolleary/pubsubclient](https://github.com/knolleary/pubsubclient)
