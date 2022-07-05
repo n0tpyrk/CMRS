@@ -1,0 +1,33 @@
+<!--Application - HTML - manager-management.page.html - MANAGE MANAGER-->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/tabs/tab1']"><ion-icon name="arrow-back"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-title>Manager Management</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines='none'>
+    <ion-item-divider>Create Manager</ion-item-divider>
+    <ion-item>
+      <ion-searchbar #usr search-icon="person" type="text" placeholder="USERNAME" style="margin:auto;margin-top:1rem;"animated></ion-searchbar>   
+    </ion-item>
+    <ion-item>
+      <ion-searchbar #pwd search-icon="lock-closed" type="password" placeholder="PSSWORD" animated></ion-searchbar>
+    </ion-item>
+    <ion-button expand="block" (click)='createManager(usr.value,pwd.value)' style="margin:auto;margin-top:0.1rem;margin-bottom:2rem;width:10rem;">Create</ion-button>
+    <ion-item-divider>Activate/Deactivate Manager</ion-item-divider>
+    <ion-button (click)='getManagers()' expand="block"><ion-icon name="refresh-circle" slot='start'></ion-icon>Refresh Manager List</ion-button>
+    <ion-item style="color:lightgrey;padding:0rem;margin:0rem;font-size:1rem;"> 
+      <ion-label>Manager List Last Updated Time: </ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD HH:mm" value={{updateTime}}></ion-datetime>
+    </ion-item>
+    <ion-item *ngFor = "let m of managers">
+      <ion-label>{{m.name}} : {{m.key}} - {{m.machineid}}</ion-label>
+      <ion-button (click)='deleteManager(m.name)'>Delete</ion-button>
+      <ion-toggle checked={{m.activated}} (ionChange)='toggleManager(m.name,m.activated)'></ion-toggle>   
+    </ion-item>
+  </ion-list>
+</ion-content>

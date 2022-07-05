@@ -1,0 +1,33 @@
+<!--Application - HTML - tab1.page.html - HOME-->
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Coffee Machines
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Coffee Machines</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list lines="none">
+    <ion-button (click)='getMachineList()' expand="block"><ion-icon name="refresh-circle" slot='start'></ion-icon>Get Machines</ion-button>
+    <ion-item style="color:lightgrey;padding:0rem;margin:0rem;font-size:1rem;"> 
+      <ion-label>Machine List Last Updated Time: </ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD HH:mm" value={{updateTime}}></ion-datetime>
+    </ion-item> 
+    <ion-item *ngFor = "let m of machines">
+      <ion-label>Coffee Machine - {{m.id}}</ion-label>
+      <ion-toggle disabled={{!m.stat}} checked={{m.power}} (ionChange)='toggleMachine(m.id,m.power)'></ion-toggle>   
+    </ion-item>
+      <ion-button color="danger" (click)="logout()" expand="block" style="text-align:center;margin:auto;margin-top:2rem;width:10rem;">Log Out</ion-button>
+  </ion-list>
+  <ion-button *ngIf='postman.getCurrentRole()==1' [routerLink]="['/user-management']" expand="block" style="text-align:center;margin:auto;margin-top:2rem;width:10rem;">Manage Member</ion-button>
+  <ion-button *ngIf='postman.getCurrentRole()==2' [routerLink]="['/manager-management']" expand="block" style="text-align:center;margin:auto;margin-top:2rem;width:10rem;">Manage Manager</ion-button>
+  <ion-button *ngIf='postman.getCurrentRole()==2' [routerLink]="['/machine-management']" expand="block" style="text-align:center;margin:auto;margin-top:1rem;width:10rem;">Manage Machine</ion-button>
+
+</ion-content>

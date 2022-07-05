@@ -1,0 +1,30 @@
+<!--Application - HTML - machine-management.page.html - MANAGE MACHINE-->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/tabs/tab1']"><ion-icon name="arrow-back"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-title>Machine Management</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines='none'>
+    <ion-item-divider>Add Machine</ion-item-divider>
+    <ion-item>
+      <ion-searchbar #mid search-icon="settings-outline" type="number" placeholder="MACHINE ID" style="margin:auto;margin-top:1rem;"animated></ion-searchbar>   
+    </ion-item>
+    <ion-button (click)='addCoffeeMachine(mid.value)' expand="block" style="margin:auto;margin-top:0.1rem;margin-bottom:2rem;width:10rem;">Add</ion-button>
+    <ion-item-divider>Activate/Deactivate Machine</ion-item-divider>
+    <ion-button (click)='getMachineList()' expand="block"><ion-icon name="refresh-circle" slot='start'></ion-icon>Refresh Machine List</ion-button>
+    <ion-item style="color:lightgrey;padding:0rem;margin:0rem;font-size:1rem;"> 
+      <ion-label>Machine List Last Updated Time: </ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD HH:mm" value={{updateTime}}></ion-datetime>
+    </ion-item>
+    <ion-item *ngFor = "let m of machines">
+      <ion-label>{{m.id}}</ion-label>
+      <ion-button (click)='deleteCoffeeMachine(m.id)'>Delete</ion-button>
+      <ion-toggle checked={{m.stat}} (ionChange)='toggleMachine(m.id,m.stat)'></ion-toggle>   
+    </ion-item>
+  </ion-list>
+</ion-content>

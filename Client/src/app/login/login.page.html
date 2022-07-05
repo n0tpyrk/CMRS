@@ -1,0 +1,29 @@
+<!--Application - HTML - login.page.html-->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Welcome</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="text-align:center;">
+  <ion-list lines='none' >
+    <ion-item>
+      <ion-img src='assets\img\gccs-logo.png' style="margin:auto; margin-top:2rem;margin-bottom:2rem;width:10rem;"></ion-img>
+    </ion-item>
+    <ion-item>
+      <ion-searchbar #usr search-icon="person" type="text" placeholder="USERNAME" animated></ion-searchbar>   
+    </ion-item>
+    <ion-item>
+      <ion-searchbar #pwd search-icon="lock-closed" type="password" placeholder="PSSWORD" animated></ion-searchbar>
+    </ion-item>
+    <ion-item>
+      <ion-label>Login as: </ion-label>
+      <ion-select #role placeholder="Please select...">
+        <ion-select-option value=0>Member</ion-select-option>
+        <ion-select-option value=1>Manager</ion-select-option>
+        <ion-select-option value=2>Administrator</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button (click)="login(usr.value, pwd.value, role.value)" style="margin:auto; margin-top:2rem; width:10rem;">Login</ion-button>
+  </ion-list>
+</ion-content>
